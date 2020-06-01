@@ -2,9 +2,8 @@
 
 require 'rails_helper'
 
-Rspec.feature 'home page displays correctly', type: :feature do
+RSpec.feature 'home page displays correctly', type: :feature do
 
-
-
+ 
 end
 
