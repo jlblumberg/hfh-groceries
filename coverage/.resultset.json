@@ -13,6 +13,14 @@
           null
         ]
       },
+      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
       "/Users/sbell/Documents/Projects/hfh-groceries/app/models/application_record.rb": {
         "lines": [
           0,
@@ -23,6 +31,6 @@
         }
       }
     },
-    "timestamp": 1591025707
+    "timestamp": 1591026598
   }
 }
