@@ -1,6 +1,18 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/maps_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
       "/Users/sbell/Documents/Projects/hfh-groceries/app/models/application_record.rb": {
         "lines": [
           0,
@@ -9,16 +21,8 @@
         ],
         "branches": {
         }
-      },
-      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/application_controller.rb": {
-        "lines": [
-          0,
-          0
-        ],
-        "branches": {
-        }
       }
     },
-    "timestamp": 1591021775
+    "timestamp": 1591024697
   }
 }
