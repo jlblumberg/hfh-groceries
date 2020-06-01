@@ -10,5 +10,4 @@ function loadMap() {
     {position: startingPos, map: map}
   );
 
-
 }
