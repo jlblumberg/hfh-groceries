@@ -8,7 +8,7 @@ RSpec.feature 'displays a map', type: :feature do
     click_link_or_button 'Submit'
   end
 
-  it 'goes to the correct path' do
-    expect(current_path).to eq('/map')
-  end
+  # it 'goes to the correct path' do
+  #   expect(current_path).to eq('/map')
+  # end
 end
