@@ -17,9 +17,46 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-window.loadMap = function(lat, lng) {
-  var mapOptions = {zoom: 14, center: {lat: 51.509865, lng: -0.118092}, mapTypeId: 'roadmap'}
 
-  var map = new google.maps.Map(
-  document.getElementById('map'), mapOptions);
+//  infoWindow
+
+window.loadMap = function(lat,lng) {
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center:  {lat: lat, lng: lng},
+    mapTypeId: 'roadmap'
+  });
+
+  var infoWindow = new google.maps.InfoWindow();
+
+  var request = {
+    query: 'Sainsburys',
+    fields: ['name', 'geometry'],
+  };
+
+  var service = new google.maps.places.PlacesService(map);
+
+  service.textSearch(request, function(results, status) {
+    if (status === google.maps.places.PlacesServiceStatus.OK) {
+      console.log(results)
+      for (var i = 0; i < results.length; i++) {
+        createMarker(results[i]);
+      }
+      map.setCenter(results[0].geometry.location);
+    }
+  });
+
+  function createMarker(place) {
+    var marker = new google.maps.Marker({
+      map: map,
+      position: place.geometry.location
+    });
+
+    google.maps.event.addListener(marker, 'click', function() {
+      // TODO Add place details call
+      infoWindow.setContent(`<h1>${place.name}</h1><p>${place.formatted_address}</p><p>Open now:${place.opening_hours.open_now}</p>`);
+      infoWindow.open(map, this);
+    });
+  }
+
 }
