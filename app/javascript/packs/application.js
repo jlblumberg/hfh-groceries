@@ -18,16 +18,17 @@ require("channels")
 // const imagePath = (name) => images(name, true)
 
 
-//  infoWindow
+var infoWindow
+var map
 
 window.loadMap = function(lat,lng) {
-  var map = new google.maps.Map(document.getElementById('map'), {
+  map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
     center:  {lat: lat, lng: lng},
     mapTypeId: 'roadmap'
   });
 
-  var infoWindow = new google.maps.InfoWindow();
+  infoWindow = new google.maps.InfoWindow();
 
   var request = {
     query: 'Sainsburys',
@@ -40,11 +41,13 @@ window.loadMap = function(lat,lng) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
       console.log(results)
       for (var i = 0; i < results.length; i++) {
-        createMarker(results[i]);
+        getPlaceDetails(results[i],createMarker);
       }
       map.setCenter(results[0].geometry.location);
     }
   });
+
+}
 
   function createMarker(place) {
     var marker = new google.maps.Marker({
@@ -53,10 +56,24 @@ window.loadMap = function(lat,lng) {
     });
 
     google.maps.event.addListener(marker, 'click', function() {
-      // TODO Add place details call
-      infoWindow.setContent(`<h1>${place.name}</h1><p>${place.formatted_address}</p><p>Open now:${place.opening_hours.open_now}</p>`);
+      const openingHours = place.opening_hours.weekday_text.join("\n")
+      infoWindow.setContent(`<h3>${place.name}</h3><p>${place.formatted_address}</p><p>${openingHours}</p>`);
       infoWindow.open(map, this);
     });
   }
 
+  function getPlaceDetails(place,callback) {
+
+    var request = {
+      placeId: place.place_id
+    };
+
+    var service = new google.maps.places.PlacesService(map);
+
+    service.getDetails(request, function(place, status) {
+      if (status == google.maps.places.PlacesServiceStatus.OK) {
+        console.log(place)
+        callback(place)
+      }
+  })
 }
