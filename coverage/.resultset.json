@@ -1,28 +1,35 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/maps_controller.rb": {
+      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/home_controller.rb": {
         "lines": [
+          null,
+          null,
+          1,
           1,
           null
         ]
       },
       "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/application_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
           null
         ]
       },
-      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/home_controller.rb": {
+      "/Users/sbell/Documents/Projects/hfh-groceries/app/controllers/maps_controller.rb": {
         "lines": [
-          1,
-          1,
           null,
+          null,
+          1,
           null
         ]
       },
       "/Users/sbell/Documents/Projects/hfh-groceries/app/models/application_record.rb": {
         "lines": [
+          null,
+          null,
           0,
           0,
           0
@@ -31,6 +38,6 @@
         }
       }
     },
-    "timestamp": 1591026598
+    "timestamp": 1591038146
   }
 }
