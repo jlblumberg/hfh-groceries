@@ -1,6 +1,6 @@
 # Hack For Heroes Hackathon (1 - 3 June 2020) - Team Groceries 🛒
 
-[Objective](#objective) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [Running the program](#running_the_program) | [Testing](#testing) | [Further work](#further_work) 
+[Objective](#objective) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [MVP](#MVP) | [Running the program](#running_the_program) | [Testing](#testing) | [Further work](#further_work) 
 
 ## <a name="objectives">Objectives</a>
 
@@ -41,6 +41,16 @@ So that I can show off my project
 I want to deploy my project on a publicly accessible site
 ```
 
+## <a name="MVP">MVP</a>
+
+Our MVP will include the following features:
+
+- Ability to manually input your postcode as a search parameter
+- Shops will appear on a map with a pin that when clicked will show the relevant information
+- Relevant information:
+  - Display all opening hours for selected shop
+  - Display the hours the shop is open for NHS/key workers/vulnerable individuals
+
 ## <a name="running_the_program">Running the program</a>
 
 ### Setup
@@ -60,3 +70,6 @@ $ rubocop # TBC
 ```
 
 ## <a name="further_work">Further work</a>
+
+- Automatic location tracking for postcodes
+- Shop information will also display as a text list
