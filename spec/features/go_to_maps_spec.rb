@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.feature 'displays a map', type: :feature do
   before(:each) do
     visit '/'
-    click_link 'Submit'
+    click_button 'Go'
   end
 
   it 'goes to the correct path' do

@@ -10,9 +10,9 @@ RSpec.feature 'home page displays correctly', type: :feature do
   end
 
   it 'has expected content on page' do
-    visit '/'
+    visit '/maps'
 
-    expect(page).to have_content 'Please enter your postcode'
-    expect(page).to have_link 'Submit'
+    expect(page).to have_content 'Enter your postcode'
+    expect(page).to have_button 'Submit'
   end
 end

@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("maps/user_location.js")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -26,6 +27,12 @@ window.loadMap = function(lat,lng) {
     mapTypeId: 'roadmap'
   });
 
+  var geocoder = new google.maps.Geocoder();
+
+  document.getElementById('submit').addEventListener('click', function() {
+    geocodeAddress(geocoder, map);
+  });
+
   infoWindow = new google.maps.InfoWindow();
 
   var request = {
@@ -37,7 +44,6 @@ window.loadMap = function(lat,lng) {
 
   service.textSearch(request, function(results, status) {
     if (status === google.maps.places.PlacesServiceStatus.OK) {
-      console.log(results)
       for (var i = 0; i < results.length; i++) {
         getPlaceDetails(results[i],createMarker);
       }
@@ -68,8 +74,25 @@ window.loadMap = function(lat,lng) {
 
     service.getDetails(request, function(place, status) {
       if (status == google.maps.places.PlacesServiceStatus.OK) {
-        console.log(place)
         callback(place)
       }
   })
+}
+
+
+
+
+function geocodeAddress(geocoder, resultsMap) {
+var address = document.getElementById('address').value;
+geocoder.geocode({'address': address}, function(results, status) {
+  if (status === 'OK') {
+    resultsMap.setCenter(results[0].geometry.location);
+    var marker = new google.maps.Marker({
+      map: resultsMap,
+      position: results[0].geometry.location
+    });
+  } else {
+    alert('Geocode was not successful for the following reason: ' + status);
+  }
+});
 }
