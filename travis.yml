@@ -3,9 +3,9 @@ rvm:
 - 2.6.6
 services:
 - postgresql
-# before_script:
-# - bundle exec rails db:create
-# - bundle exec rails db:migrate
+before_script:
+- bundle exec rails db:create
+- bundle exec rails db:migrate
 cache:
   bundler: true
   directories:
