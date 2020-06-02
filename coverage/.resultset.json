@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "C:/Users/kehin/Google Drive/hfh-groceries/app/controllers/maps_controller.rb": {
+      "/Users/echo/Desktop/Projects/post-course/hfh-groceries/app/controllers/maps_controller.rb": {
         "lines": [
           null,
           null,
@@ -9,7 +9,7 @@
           null
         ]
       },
-      "C:/Users/kehin/Google Drive/hfh-groceries/app/controllers/application_controller.rb": {
+      "/Users/echo/Desktop/Projects/post-course/hfh-groceries/app/controllers/application_controller.rb": {
         "lines": [
           null,
           null,
@@ -17,7 +17,7 @@
           null
         ]
       },
-      "C:/Users/kehin/Google Drive/hfh-groceries/app/controllers/home_controller.rb": {
+      "/Users/echo/Desktop/Projects/post-course/hfh-groceries/app/controllers/home_controller.rb": {
         "lines": [
           null,
           null,
@@ -26,7 +26,7 @@
           null
         ]
       },
-      "C:/Users/kehin/Google Drive/hfh-groceries/app/models/application_record.rb": {
+      "/Users/echo/Desktop/Projects/post-course/hfh-groceries/app/models/application_record.rb": {
         "lines": [
           null,
           null,
@@ -38,6 +38,6 @@
         }
       }
     },
-    "timestamp": 1591087892
+    "timestamp": 1591106310
   }
 }
