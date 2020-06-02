@@ -48,3 +48,6 @@ yarn-debug.log*
 
 # Ignore node_modules
 node_modules
+
+# Ignore .env
+.env
