@@ -8,6 +8,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("maps/user_location.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
