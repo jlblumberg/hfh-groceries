@@ -1,9 +1,9 @@
 <% provide :head_tags do %>
   <meta name=‘turbolinks-visit-control’ content=‘reload’>
     <script>
-      console.log('function executes at start')
-      document.addEventListener(‘DOMContentLoaded’, function(){
-        console.log('function executes after add event listener')
+
+      document.addEventListener("DOMContentLoaded", function(){
+      
         loadMap(51.509865, -0.118092)
       });
     </script>

@@ -17,7 +17,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-function loadMap(lat, lng) {
+window.loadMap = function(lat, lng) {
   var mapOptions = {zoom: 14, center: {lat: 51.509865, lng: -0.118092}, mapTypeId: 'roadmap'}
 
   var map = new google.maps.Map(
