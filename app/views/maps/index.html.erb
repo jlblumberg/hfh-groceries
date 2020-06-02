@@ -1,0 +1,35 @@
+<% provide :head_tags do %>
+  <meta name=‘turbolinks-visit-control’ content=‘reload’>
+    <script>
+
+      document.addEventListener("DOMContentLoaded", function(){
+
+        loadMap(51.509865, -0.118092)
+      });
+    </script>
+<% end %>
+
+
+<div class="container-fluid">
+  <div class="header my-4">
+    <h2 style="color: #005EB8;">Supermarkets nearby</h2>
+  <div>
+  <div class="row mt-4">
+    <div class="col-md-8">
+      <div id="map"></div>
+    </div>
+    <div class="col-md-3">
+      <div class="jumbatron bg-light p-4 rounded">
+      <form class="form-inline" action="/maps" method="POST">
+        <h4 class="mr-2">Search again</h4>
+        <div class="form-group">
+          <input type="text" class="form-control form-control-lg mr-2" id="POSTCODE" placeholder="Enter your postcode">
+          <%= link_to 'Submit', maps_path, class: "btn btn-primary btn-lg nhs-color" %>
+        </div>
+      </form>
+      </div>
+      <div id="store-list"></div>
+    </div>
+  </div>
+</div>
+  
