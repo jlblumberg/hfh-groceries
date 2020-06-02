@@ -6,6 +6,13 @@
     <title>Key-Time</title>
   </head>
   <body>  
+  <% provide :head_tags do %>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      initUserLocation()
+    })
+  </script>
+  <% end %>
     <div class="row justify-content-center ml-2 mr-2">
       <section class="text-center col-sm-6 col-lg-5"> 
 
@@ -14,14 +21,14 @@
       <%= image_tag 'key2.png' %>
       
       <h3 class="text-center mt-5 mb-4" style="color: #005EB8;"> Please enter your postcode </h3>
-      <form action="/maps" method="POST">
+      <form action="/maps" method="post">
         <div class="form-group ml-5 mr-5">
           
-          <input type="text" class="form-control form-control-lg" id="POSTCODE" placeholder="Enter your postcode">
+          <input type="text" class="form-control form-control-lg" id="postcode-input" placeholder="Enter your postcode">
           <br>
-          <%= link_to 'Submit', maps_path, class: "btn btn-primary nhs-color" %>
         </div>
       </form>
+      <button type="submit" id="submit" class="btn btn-primary nhs-colors">Submit</button>
 
       </section>
     </div>

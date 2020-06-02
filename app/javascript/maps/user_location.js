@@ -1,5 +1,17 @@
 window.initUserLocation = function() {
-    var input = document.getElementById('pac-input');
+  var getLocation = document.getElementById('get-location')
+  getLocation.addEventListener('click', function() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function(position) {
+        var pos = { 
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+        document.location.href='/nearby?lat='+pos.lat+'&lng='+ pos.lng
+      })
+    }
+  })
+    var input = document.getElementById('postcode-input');
     var autocomplete = new google.maps.places.SearchBox(input);
 
     var grab_place = document.getElementById('submit')
