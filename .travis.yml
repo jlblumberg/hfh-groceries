@@ -1,0 +1,36 @@
+language: ruby
+rvm:
+- 2.6.3
+services:
+- postgresql
+before_script:
+- bundle exec rails db:create
+- bundle exec rails db:migrate
+cache:
+  bundler: true
+  directories:
+  - node_modules
+  yarn: true
+install:
+- bundle install
+- nvm install node
+- node -v
+- npm i -g yarn
+- yarn
+script:
+- bundle exec rails webpacker:compile
+- bundle exec rspec
+branches:
+  only:
+  - master
+deploy:
+  provider: heroku
+  skip_cleanup: true
+  app: hfh-groceries
+  on:
+    repo: jlblumberg/hfh-groceries
+  run:
+  - bundle exec rails db:migrate
+  - bundle exec rails db:seed
+  api_key:
+    secure: uKurFR0/wJw88Hbha6ghGtH3BzHg3RARcQihjOJZq5ea63rVFpPLNtxJD2CehCk+kUTBzD8vTwOjaUWewwUBQAQzYjLdF2uFv1S+uZRHmvaiw/d1aX6gWNxklG4AZzmviVg0y3EPhud9XLxS4Dffx+lGoA1RD3aijYXejLmc3sQAJx2sySdwP53UrOKRT3x+B3nSU9mFQJ0616W0xPJ5dFBpqj+ejqi5z6k2T9oEueX2cM4YmE9I90b5ksc9M1yr/E7j72hSaKQgIOwc2oc4Kb/62Vt7Lw18oYyy52jFeHpPQ09ogwRcNRbSzCWA3w+dqOozhv6Km35+Cl6o4uZIlCje+SHP4ekSBAKXfiLi1fYnueJ9dlsEvQu417cHx12OzAVhtPcMQScKTQF+nq149Yl8PP/+cug/G4kVDABntmCJyk9RF5tbarwKGTOQYB069F97Xv14kxM6kTIo2IW5xB2o2KKA8jjwE2hh6XrpJ3z91GSwXTBnTd4rHe2q2/kgrm9IdB25t2hiRIetq+EtNPjPMtjSQhTfp8+FbQZ95R6hnuailZvOB3AkqB39JWQybzlNCyq1X0VUIrCt+gTSN1iZ+BNeZa9EZcvnXuAtCP4RSuZq70elk8ivlyGL4BvfVTthmlxaIwWRGQrhORAmOKfAJ53UMUG4n6+3+ESPR5E=
