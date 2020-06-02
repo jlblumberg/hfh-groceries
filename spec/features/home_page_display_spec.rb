@@ -13,6 +13,6 @@ RSpec.feature 'home page displays correctly', type: :feature do
     visit '/'
 
     expect(page).to have_content 'Please enter your postcode'
-    expect(page).to have_link 'Submit'
+    expect(page).to have_button 'Submit'
   end
 end
