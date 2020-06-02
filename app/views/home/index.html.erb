@@ -11,6 +11,7 @@
     document.addEventListener('DOMContentLoaded', function(){
       initUserLocation()
     })
+    
   </script>
   <% end %>
     <div class="row justify-content-center ml-2 mr-2">
@@ -19,19 +20,82 @@
       <h5 class="mt-5"> Find the special hours of your nearest supermarket for NHS/key workers or vulnerable individuals.</h5>
       
       <%= image_tag 'key2.png' %>
-      
+
       <h3 class="text-center mt-5 mb-4" style="color: #005EB8;"> Please enter your postcode </h3>
-      <form action="/maps" method="post">
-        <div class="form-group ml-5 mr-5">
-          
-          <input type="text" class="form-control form-control-lg" id="postcode-input" placeholder="Enter your postcode">
-          <br>
-        </div>
+
+      <form action="/maps/generate_position">
+        <input name="postcode" id="address" type="textbox" class="form-control form-control-lg" placeholder="Enter your postcode">
+        <br>
+        <input id="submit" type="button" class="btn btn-primary nhs-color" value="Submit">
       </form>
-      <button type="submit" id="submit" class="btn btn-primary nhs-colors">Submit</button>
 
       </section>
     </div>
+
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+    </style>
+  </head>
+    <body>
+    
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 8,
+          center: {lat: -34.397, lng: 150.644}
+        });
+        var geocoder = new google.maps.Geocoder();
+
+        document.getElementById('submit').addEventListener('click', function() {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=PLACEHOLDER">
+    </script>
+  </body>
 
     <footer>
     </footer>
