@@ -46,6 +46,23 @@ window.loadMap = function(lat,lng) {
     }
   });
 
+  var placeRequest = {
+    // placeId: `${place.place_id}`,
+    placeId: 'ChIJ8RCWvM4EdkgR2SnPrJHdKlM',
+    fields: ['name', 'opening_hours', 'website']
+  };
+  
+  var placeService = new google.maps.places.PlacesService(map);
+  placeService.getDetails(placeRequest, getPlaceDetails);
+
+  function getPlaceDetails(place, status) {
+    if (status == google.maps.places.PlacesServiceStatus.OK) {
+      console.log(place.opening_hours.weekday_text)
+      let wkdaytest = place.opening_hours.weekday_text
+      return wkdaytest
+    }
+  }
+
   function createMarker(place) {
     var marker = new google.maps.Marker({
       map: map,
@@ -54,9 +71,11 @@ window.loadMap = function(lat,lng) {
 
     google.maps.event.addListener(marker, 'click', function() {
       // TODO Add place details call
-      infoWindow.setContent(`<h1>${place.name}</h1><p>${place.formatted_address}</p><p>Open now:${place.opening_hours.open_now}</p>`);
+      console.log(placeService.getDetails(placeRequest, getPlaceDetails))
+      infoWindow.setContent(`<h1>${place.name}</h1><p>${place.formatted_address}</p><p>${placeService.getDetails(placeRequest, getPlaceDetails)}</p>`);
       infoWindow.open(map, this);
     });
   }
+  
 
 }
