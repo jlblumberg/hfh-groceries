@@ -1,6 +1,6 @@
 # Hack For Heroes Hackathon (1 - 3 June 2020) - Team Groceries 🛒
 
-[Objective](#objective) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [MVP](#MVP) | [Running the program](#running_the_program) | [Testing](#testing) | [Technologies](#technologies) |[Further work](#further_work) 
+[Objective](#objective) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [MVP](#MVP) | [Running the program](#running_the_program) | [Testing](#testing) | [Technologies](#technologies) | [Further work](#further_work) 
 
 Check it out live, [right here](http://hfh-groceries.herokuapp.com/)!!
 
@@ -10,20 +10,20 @@ Create an app which provides frontline workers and at-risk individuals with the 
 
 ## <a name="collaborators">Collaborators</a>
 
-- Srikaanth Balajhi
-- Sophia Bell
-- Josh Blumberg
-- Ilias Grigoropoulos
-- Haydon Houghton
-- Kehinde Peter Olofinmoyin
-- Jason Wong
-- Emily Wright
-- Liz Daly
+- [Srikaanth Balajhi](https://github.com/srikaanthtb)
+- [Sophia Bell](https://github.com/Kittaru87)
+- [Josh Blumberg](https://github.com/jlblumberg)
+- [Ilias Grigoropoulos](https://github.com/IliasMariosG)
+- [Haydon Houghton](https://github.com/Kefuri)
+- [Kehinde Peter Olofinmoyin](https://github.com/KOlofinmoyin)
+- [Jason Wong](https://github.com/jasylwong)
+- [Emily Wright](https://github.com/EWright212)
+- [Liz Daly](https://github.com/lookupdaily)
 
 ## <a name="planning">Planning</a>
 
-- [Miro MVP board:](https://miro.com/app/board/o9J_kr0yDm4=/)
-- [Invision wireframes:](https://jason842465.invisionapp.com/freehand/hfh-groceries-K7tpa9Jf9?v=vjZVtVETrCEbCjPjKYYovg%3D%3D&linkshare=urlcopied)
+- [Miro MVP board](https://miro.com/app/board/o9J_kr0yDm4=/)
+- [Invision wireframes](https://jason842465.invisionapp.com/freehand/hfh-groceries-K7tpa9Jf9?v=vjZVtVETrCEbCjPjKYYovg%3D%3D&linkshare=urlcopied)
 
 ## <a name="user_stories">User stories</a>
 
