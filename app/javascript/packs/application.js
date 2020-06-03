@@ -51,7 +51,6 @@ function getSainsburys(map) {
       for (var i = 0; i < results.length; i++) {
         getPlaceDetails(results[i],createMarker);
       }
-      map.setCenter(results[0].geometry.location);
     }
   });
 }
@@ -91,19 +90,12 @@ function getSainsburys(map) {
   })
 }
 
-
-
-
 function geocodeAddress(geocoder, resultsMap) {
 var address = document.getElementById('address').value;
 geocoder.geocode({'address': address}, function(results, status) {
   if (status === 'OK') {
-    resultsMap.setCenter(results[0].geometry.location);
+    map.setCenter(results[0].geometry.location);
     getSainsburys(resultsMap)
-    var marker = new google.maps.Marker({
-      map: resultsMap,
-      position: results[0].geometry.location
-    });
   } else {
     alert('Geocode was not successful for the following reason: ' + status);
   }
