@@ -20,10 +20,10 @@ require("maps/user_location.js")
 var infoWindow
 var map
 
-window.loadMap = function(lat,lng) {
+window.loadMap = function() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
-    center:  {lat: lat, lng: lng},
+    center: { lat: 51.509865, lng: -0.118092 },
     mapTypeId: 'roadmap'
   });
 
