@@ -1,6 +1,6 @@
 # Hack For Heroes Hackathon (1 - 3 June 2020) - Team Groceries 🛒
 
-[Objective](#objective) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [MVP](#MVP) | [Running the program](#running_the_program) | [Testing](#testing) | [Technologies](#technologies) | [Further work](#further_work) 
+[Objective](#objectives) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [MVP](#MVP) | [Running the program](#running_the_program) | [Testing](#testing) | [Technologies](#technologies) | [Further work](#further_work) 
 
 Check it out live, [right here](http://hfh-groceries.herokuapp.com/)!!
 
