@@ -8,7 +8,6 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require("maps/user_location.js")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
@@ -20,21 +19,25 @@ require("maps/user_location.js")
 var infoWindow
 var map
 
-window.loadMap = function(lat,lng) {
+window.loadMap = function() {
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
-    center:  {lat: lat, lng: lng},
+    center: { lat: 51.509865, lng: -0.118092 },
     mapTypeId: 'roadmap'
   });
 
   var geocoder = new google.maps.Geocoder();
 
   document.getElementById('submit').addEventListener('click', function() {
+
     geocodeAddress(geocoder, map);
   });
 
   infoWindow = new google.maps.InfoWindow();
 
+}
+
+function getSainsburys(map) {
   var request = {
     query: 'Sainsburys',
     fields: ['name', 'geometry'],
@@ -47,7 +50,6 @@ window.loadMap = function(lat,lng) {
       for (var i = 0; i < results.length; i++) {
         getPlaceDetails(results[i],createMarker);
       }
-      map.setCenter(results[0].geometry.location);
     }
   });
 }
@@ -87,18 +89,12 @@ window.loadMap = function(lat,lng) {
   })
 }
 
-
-
-
 function geocodeAddress(geocoder, resultsMap) {
 var address = document.getElementById('address').value;
 geocoder.geocode({'address': address}, function(results, status) {
   if (status === 'OK') {
-    resultsMap.setCenter(results[0].geometry.location);
-    var marker = new google.maps.Marker({
-      map: resultsMap,
-      position: results[0].geometry.location
-    });
+    map.setCenter(results[0].geometry.location);
+    getSainsburys(resultsMap)
   } else {
     alert('Geocode was not successful for the following reason: ' + status);
   }
