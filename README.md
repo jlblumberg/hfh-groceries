@@ -2,6 +2,8 @@
 
 [Objective](#objective) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [MVP](#MVP) | [Running the program](#running_the_program) | [Testing](#testing) | [Further work](#further_work) 
 
+Check it out live, [right here](http://hfh-groceries.herokuapp.com/)!!
+
 ## <a name="objectives">Objectives</a>
 
 Create an app which provides frontline workers and at-risk individuals with the open times devoted purely to them at their
