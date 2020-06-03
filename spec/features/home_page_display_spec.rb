@@ -13,6 +13,6 @@ RSpec.feature 'home page displays correctly', type: :feature do
     visit '/maps'
 
     expect(page).to have_content 'Enter your postcode'
-    expect(page).to have_button 'Submit'
+    expect(page).to have_button 'Search'
   end
 end
