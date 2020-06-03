@@ -60,7 +60,15 @@ window.loadMap = function() {
 
     google.maps.event.addListener(marker, 'click', function() {
       const openingHours = place.opening_hours.weekday_text.join(" | ")
-      infoWindow.setContent(`<h3>${place.name}</h3><p>${place.formatted_address}</p><p>${openingHours}</p>`);
+      infoWindow.setContent(`
+        <h3>${place.name}</h3>
+        <p>${place.formatted_address}</p>
+        <strong><p>Key hours:</p>
+        <div>Elderly and disabled: Mon/Wed/Fri: 8 - 9am</div><br />
+        <div>NHS & Social Care Workers: Mon - Sat: 7.30 - 8am</div></strong><br />
+        <p>All hours:</p>
+        <p>${openingHours}</p>
+        <a href="${place.website}">Store website</a>`);
       infoWindow.open(map, this);
     });
   }
