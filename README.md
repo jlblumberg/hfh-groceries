@@ -18,6 +18,7 @@ Create an app which provides frontline workers and at-risk individuals with the 
 - Kehinde Peter Olofinmoyin
 - Jason Wong
 - Emily Wright
+- Liz Daly
 
 ## <a name="planning">Planning</a>
 
