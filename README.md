@@ -1,3 +1,10 @@
+***
+⚠️⚠️⚠️
+> When Heroku became paywalled, we decided to decommission the site. You can still explore the code and see how it used to look below.
+
+⚠️⚠️⚠️
+***
+
 # Hack For Heroes Hackathon (1 - 3 June 2020) - Team Groceries 🛒
 
 [Objective](#objectives) | [Collaborators](#collaborators) | [Planning](#planning) | [User Stories](#user_stories) | [MVP](#MVP) | [Running the program](#running_the_program) | [Testing](#testing) | [Technologies](#technologies) | [Further work](#further_work) 
